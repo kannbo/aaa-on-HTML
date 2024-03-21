@@ -14,4 +14,4 @@ def postpost():
 def aaaaw(name):
     global koukai
     return koukai[int(name)]
-run(port="8888",host="localhost")
+run(port="10000",host="localhost")
