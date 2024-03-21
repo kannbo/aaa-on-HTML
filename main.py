@@ -15,7 +15,7 @@ def aaa_list(x: str,doHTML: bool=False) -> list:
                 block.append(x[i])
     
     return block
-def aaa(x: str,doHTML: bool=False,ui: bool=True) -> str:
+def aaa(x: str,doHTML: bool=False,ui: bool=True,title: str="aaa_page") -> str:
     global html
     block=aaa_list(x,doHTML)
     flag=False
@@ -110,7 +110,7 @@ h2 {
 }
 </style>
 """
-    return text+webui
+    return f"<title>{title}</title>"+text+webui
 if "__main__"==__name__:
     print(html["|"])
     print(aaa_list("hello<>"))
