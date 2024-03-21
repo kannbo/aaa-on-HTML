@@ -9,7 +9,7 @@ def postpost():
     global koukai
     print(aaa(request.forms.area))
     koukai.append(aaa(request.forms.area))
-    return aaa(request.forms.area)
+    return aaa(request.forms.area)+f'<br><a href="/page={len(koukai)-1}">共有URL</a>'
 @route("/page=<name>")
 def aaaaw(name):
     global koukai
