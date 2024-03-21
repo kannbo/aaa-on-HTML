@@ -1,6 +1,6 @@
 def tagw(x):
     return (x,x)
-html={"!":tagw("h1"),'"':tagw("strong"),"#":tagw("h2"),"|":tagw("style")}
+html={"!":tagw("h1"),'"':tagw("strong"),"#":tagw("h2"),"|":tagw("style"),"'":tagw("under"),"%":tagw("code")}
 def aaa_list(x: str,doHTML: bool=False) -> list:
     block=[]
     for i in range(len(x)):
@@ -15,7 +15,7 @@ def aaa_list(x: str,doHTML: bool=False) -> list:
                 block.append(x[i])
     
     return block
-def aaa(x: str,doHTML: bool=False) -> str:
+def aaa(x: str,doHTML: bool=False,ui: bool=True) -> str:
     global html
     block=aaa_list(x,doHTML)
     flag=False
@@ -87,7 +87,30 @@ def aaa(x: str,doHTML: bool=False) -> str:
             #print("fack",i)
         #print(flag_name,ii)
         #print(flag_name)
-    return text
+    webui=""
+    if ui:
+        webui="""
+<style>
+under {
+  text-decoration: underline;
+}
+code {
+	background: inherit;
+	font-size: inherit;
+	color: inherit;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+h2 {
+  font-weight: bold;
+  border-left: 5px solid #4c9ac0;
+  border-bottom: 2px dashed #B4B4B4;
+  padding: 0.25em 0 0.3em 0.5em;
+}
+</style>
+"""
+    return text+webui
 if "__main__"==__name__:
     print(html["|"])
     print(aaa_list("hello<>"))
