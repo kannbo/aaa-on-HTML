@@ -15,7 +15,7 @@ def aaa_list(x: str,doHTML: bool=False) -> list:
                 block.append(x[i])
     
     return block
-def aaa(x: str,doHTML: bool=False,ui: bool=True,title: str="aaa_page") -> str:
+def aaa(x: str,doHTML: bool=False,ui: bool=True,title: str="aaa_page",LinkJs: bool=True) -> str:
     global html
     block=aaa_list(x,doHTML)
     flag=False
@@ -27,6 +27,8 @@ def aaa(x: str,doHTML: bool=False,ui: bool=True,title: str="aaa_page") -> str:
     if not type(x)==type("a"):
         raise TypeError("x is not str.")
     if not doHTML in [True,False]:
+        raise TypeError("doHTML is not bool.")
+    if not LinkJs in [True,False]:
         raise TypeError("doHTML is not bool.")
     for i in block:
         ii+=1
@@ -113,7 +115,10 @@ h2 {
 }
 </style>
 """
-    return f"<title>{title}</title>"+text+webui
+    LinkJS=""
+    if LinkJs:
+        LinkJS='<script src="Link.js"></script>'
+    return f"<title>{title}</title>"+LinkJS+text+webui
 if "__main__"==__name__:
     print(html["|"])
     print(aaa_list("hello<>"))
