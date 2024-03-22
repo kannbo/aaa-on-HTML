@@ -117,8 +117,8 @@ h2 {
 """
     LinkJS=""
     if LinkJs:
-        LinkJS='<script src="Link.js"></script>'
-    return f"<title>{title}</title>"+LinkJS+text+webui
+        LinkJS='<script src="https://github.com/kannbo/aaa-on-HTML/Link.js"></script>'
+    return f"<title>{title}</title>"+text+webui+LinkJS
 if "__main__"==__name__:
     print(html["|"])
     print(aaa_list("hello<>"))
