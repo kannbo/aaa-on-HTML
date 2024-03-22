@@ -117,7 +117,11 @@ h2 {
 """
     LinkJS=""
     if LinkJs:
-        LinkJS='<script src="https://github.com/kannbo/aaa-on-HTML/Link.js"></script>'
+        LinkJS='''<script>var link = document.getElementsByTagName('links');
+link.forEach(function(value) {
+     URL = value.textContent
+     value.innerHTML='<a href="'+URL+'">Link!:'+URL+"</a>"
+});</script>'''
     return f"<title>{title}</title>"+text+webui+LinkJS
 if "__main__"==__name__:
     print(html["|"])
