@@ -76,7 +76,7 @@ def aaa(x: str,doHTML: bool=False,ui: bool=True,title: str="aaa_page") -> str:
             except:
                 text=text+"<br>"
                 print("a",ii)
-		flag2=False
+                flag2=False
 
         else:
             if not i in ("(",")"):
