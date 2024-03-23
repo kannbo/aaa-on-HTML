@@ -1,6 +1,6 @@
 def tagw(x):
     return (x,x)
-html={"!":tagw("h1"),'"':tagw("strong"),"#":tagw("h2"),"|":tagw("style"),"'":tagw("under"),"%":tagw("code"),"_":"links"}
+html={"!":tagw("h1"),'"':tagw("strong"),"#":tagw("h2"),"|":tagw("style"),"'":tagw("under"),"%":tagw("code"),"-":"links"}
 def aaa_list(x: str,doHTML: bool=False) -> list:
     block=[]
     for i in range(len(x)):
